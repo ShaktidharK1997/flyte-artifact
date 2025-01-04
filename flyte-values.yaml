@@ -1,0 +1,19 @@
+# config/flyte-values.yaml
+configuration:
+  database:
+    host: postgres
+    port: 5432
+    dbname: flyteadmin
+    username: postgres
+    password: postgrespassword
+  storage:
+    type: minio
+    container: my-bucket
+    connection:
+      access-key: minio
+      auth-type: accesskey
+      secret-key: miniostorage
+      secure: false
+      endpoint: "http://minio.flyte:9000"
+  auth:
+    enabled: false

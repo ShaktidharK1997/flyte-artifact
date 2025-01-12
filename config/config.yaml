@@ -1,0 +1,7 @@
+admin:
+  endpoint: localhost:8089
+  authType: Pkce
+  insecure: true
+logger:
+  show-source: true
+  level: 6

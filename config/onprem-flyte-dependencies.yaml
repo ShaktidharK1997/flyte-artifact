@@ -11,12 +11,11 @@ metadata:
   name: postgresql-pvc
   namespace: flyte
 spec:
-  storageClassName: "hostpath"
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
+      storage: 4Gi
 
 ---
 apiVersion: v1
@@ -25,12 +24,11 @@ metadata:
   name: minio-pvc
   namespace: flyte
 spec:
-  storageClassName: "hostpath"
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 8Gi
 
 ---
 apiVersion: v1

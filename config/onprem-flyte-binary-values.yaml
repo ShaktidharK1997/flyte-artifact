@@ -1,21 +1,19 @@
 configuration:
   database:
-    username: user           
-    password: password       
-    host: 192.168.1.12      
-    port: 5432              
-    dbname: mlflowdb        
+    username: flyte
+    host: postgres.flyte.svc.cluster.local
+    dbname: flyte
   storage:
     type: minio
-    metadataContainer: bucket 
-    userDataContainer: bucket
+    metadataContainer: flyte #This is the default bucket created with Minio. Controlled by the MINIO_DEFAULT_BUCKETS env var in the local-flyte-resources.yaml manifest
+    userDataContainer: flyte
     provider: s3
     providerConfig:
       s3:
         authType: "accesskey"
-        endpoint: "http://192.168.1.11:9000"  
-        accessKey: "minio_user"              
-        secretKey: "minio_password"      
+        endpoint: "http://minio.flyte.svc.cluster.local:9000"
+        accessKey: "minio"
+        secretKey: "miniostorage" #If you need to change this parameters, refer to the local-flyte-resources.yaml manifest and adjust the MINIO_ROOT_PASSWORD env var
         disableSSL: "true"
         secure: "false"
         v2Signing: "true"
@@ -26,14 +24,14 @@ configuration:
       k8s:
         inject-finalizer: true
         default-env-vars:
-          - FLYTE_AWS_ENDPOINT: "http://192.168.1.11:9000"          
-          - FLYTE_AWS_ACCESS_KEY_ID: "minio_user"                   
-          - FLYTE_AWS_SECRET_ACCESS_KEY: "minio_password"           
+          - FLYTE_AWS_ENDPOINT: "http://minio.flyte.svc.cluster.local:9000"
+          - FLYTE_AWS_ACCESS_KEY_ID: "minio"
+          - FLYTE_AWS_SECRET_ACCESS_KEY: "miniostorage" #Use the same value as the MINIO_ROOT_PASSWORD
 
     task_resources:
       defaults:
         cpu: 100m
-        memory: 500Mi
+        memory: 500Mi #change default requested resources and limits to fit your needs
       limits:
         memory: 2Gi
 

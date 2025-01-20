@@ -55,6 +55,7 @@ flyte-artifact/
 │   └── house_price_predictor.py
 ├── reserve_kvm/             # Chameleon setup
 │   └── reserve_chameleon.ipynb
+│   └── delete_chameleon.ipynb
 └── README.md
 ```
 

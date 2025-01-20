@@ -67,7 +67,11 @@ The repository includes sample workflows in the `scripts` directory:
 - `house_price_predictor.py`: ML workflow example
 
 To run a workflow:
-```bash
+```python
+pyflyte run --remote scripts/hello_world.py my_wf
+```
+To run a workflow with a pre-built docker image:
+```python
 pyflyte run --remote scripts/hello_world.py my_wf
 ```
 

@@ -13,7 +13,7 @@ Flyte is an open-source workflow automation platform that simplifies the process
 
 ## Prerequisites
 
-- Chameleon Cloud account with an active project
+- Chameleon Cloud account with an active project [Hello, Chameleon](https://teaching-on-testbeds.github.io/blog/hello-chameleon)
 - SSH keys configured in your Chameleon account
 - Basic understanding of Kubernetes and container orchestration
 - Familiarity with Python and ML workflows

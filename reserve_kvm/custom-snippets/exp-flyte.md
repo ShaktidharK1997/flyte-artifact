@@ -205,11 +205,29 @@ ps aux | grep "port-forward" | grep -v grep
 """)
 ```
 :::
+::: {.cell .markdown}
 
+### Running a sample "Hello World!" script in Flyte
+
+:::
 ::: {.cell .code}
 ```python
 remote.run("source myenv/bin/activate; pyflyte run --remote flyte-artifact/scripts/rm hello_world.py my_wf")
 ```
+:::
+
+::: {.cell .markdown}
+
+### Running a house price predictor workflow in Flyte
+ Go to the dashboard at {Node-1's public IP}:8088 after running house_predictor workflow to see Flyte Workflow in action!
+:::
+
+::: {.cell .code}
+
+```python
+remote.run("source myenv/bin/activate; pyflyte run --image sk10945/house-price-predictor:latest scripts/house_price_predictor.py house_price_wf")
+```
+
 :::
 
 ::: {.cell .markdown}

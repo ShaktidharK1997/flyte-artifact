@@ -93,6 +93,8 @@ kubectl delete -f config/onprem-flyte-dependencies.yaml
 kubectl delete namespace flyte
 ```
 
+3. Run delete_chameleon.ipynb in reserve_kvm folder
+
 ## Contributing
 
 Feel free to contribute to this repository by:

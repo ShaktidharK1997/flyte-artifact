@@ -72,7 +72,7 @@ pyflyte run --remote scripts/hello_world.py my_wf
 ```
 To run a workflow with a pre-built docker image:
 ```python
-pyflyte run --remote scripts/hello_world.py my_wf
+pyflyte run --image sk10945/house-price-predictor:latest scripts/house_price_predictor.py house_price_wf
 ```
 
 
